@@ -1,6 +1,5 @@
 # Ourson.app - Backend
 
-## Description
 Ourson.app is the first intelligent app that gives you a helping paw when it comes to your child's development in three aspects: nutrition, sleep tracking, and activities.
 
 Ourson allows you to share information with all the parents of the child for effective collaboration. It provides personalized and balanced baby recipes based on what has been done during the week, tracks the child's sleep to suggest optimal bedtime and wake-up times, and offers activities tailored to the child's level of development and preferences.
