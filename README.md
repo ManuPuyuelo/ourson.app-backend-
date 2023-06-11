@@ -1,4 +1,4 @@
-# Ourson.app - Backend
+# 🧸 Ourson.app - Backend
 
 Ourson.app is the first intelligent app that gives you a helping paw when it comes to your child's development in three aspects: nutrition, sleep tracking, and activities.
 
@@ -14,8 +14,8 @@ Ourson allows you to share information with all the parents of the child for eff
 - Search for a specific recipe.
 
 ## Technologies Used
-- Backend & Database : Node.js, Express, MongoDB.
 - [Frontend](https://github.com/ManuPuyuelo/ourson.app-frontend) : React Native, CSS, JavaScript
+- Backend & Database : Node.js, Express, MongoDB.
 
 ## Demo
 ![demoGIF](https://github.com/ManuPuyuelo/ourson.app-backend-/assets/29115065/b91acc46-b2c7-44b6-9627-eb2037e7987b)
