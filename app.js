@@ -10,6 +10,7 @@ require("./models/connection");
 var usersRouter = require("./routes/users");
 var recipesRouter = require("./routes/recipes");
 var tastedFoodsRouter = require("./routes/tastedFoods");
+var articlesRouter = require("./routes/articles");
 
 var app = express();
 
@@ -24,6 +25,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/users", usersRouter);
 app.use("/recipes", recipesRouter);
-app.use("/Tastedfoods", tastedFoodsRouter);
+app.use("/tastedFoods", tastedFoodsRouter);
+app.use("/articles", articlesRouter);
 
 module.exports = app;
