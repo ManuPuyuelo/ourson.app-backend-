@@ -5,19 +5,26 @@ const User = require("../models/users");
 
 // Route to get all articles needed
 router.get("/", (req, res) => {
-  Article.find().then((articles) => {
-    if (articles) {
-      res.json({
-        result: true,
-        articlesList: articles,
-      });
-    } else {
-      res.json({
-        result: false,
-        error: "Articles not found",
-      });
-    }
-  });
+  // Récupération des query parameters 'start' et 'limit'
+  const start = Number(req.query.start) || 0;
+  const limit = Number(req.query.limit);
+
+  Article.find()
+    .skip(start)
+    .limit(limit)
+    .then((articles) => {
+      if (articles) {
+        res.json({
+          result: true,
+          articlesList: articles,
+        });
+      } else {
+        res.json({
+          result: false,
+          error: "Articles not found",
+        });
+      }
+    });
 });
 
 // Route to get only a specific article through the slud in url
