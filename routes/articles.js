@@ -10,6 +10,7 @@ router.get("/", (req, res) => {
   const limit = Number(req.query.limit);
 
   Article.find()
+    .sort({ createdDate: -1 })
     .skip(start)
     .limit(limit)
     .then((articles) => {
