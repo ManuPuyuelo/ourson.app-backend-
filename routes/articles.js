@@ -29,7 +29,7 @@ router.get("/", (req, res) => {
 });
 
 // Route to get all articles needed per each section
-router.get("/:sectionName", (req, res) => {
+router.get("/section/:sectionName", (req, res) => {
   const sectionName = req.params.sectionName;
 
   if (sectionName === "toutes-les-sections") {
