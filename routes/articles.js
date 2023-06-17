@@ -28,6 +28,57 @@ router.get("/", (req, res) => {
     });
 });
 
+// Route to get all articles needed per each section
+router.get("/:sectionName", (req, res) => {
+  const sectionName = req.params.sectionName;
+
+  if (sectionName === "toutes-les-sections") {
+    Article.find()
+      .sort({ createdDate: -1 })
+      .then((articles) => {
+        if (articles.length > 0) {
+          res.json({
+            result: true,
+            articlesList: articles,
+          });
+        } else {
+          res.json({
+            result: false,
+            error: "Articles not found",
+          });
+        }
+      })
+      .catch((error) => {
+        res.json({
+          result: false,
+          error: error.message,
+        });
+      });
+  } else {
+    Article.find({ tags: sectionName })
+      .sort({ createdDate: -1 })
+      .then((articles) => {
+        if (articles.length > 0) {
+          res.json({
+            result: true,
+            articlesList: articles,
+          });
+        } else {
+          res.json({
+            result: false,
+            error: "Articles not found",
+          });
+        }
+      })
+      .catch((error) => {
+        res.json({
+          result: false,
+          error: error.message,
+        });
+      });
+  }
+});
+
 // Route to get only a specific article through the slud in url
 router.get("/:slug", (req, res) => {
   Article.findOne({ slug: req.params.slug }).then((article) => {
